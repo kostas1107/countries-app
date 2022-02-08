@@ -1,10 +1,10 @@
-import './App.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import './header/Header';
+import Header from './header/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
     </div>
   );
 }

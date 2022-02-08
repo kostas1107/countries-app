@@ -1,0 +1,32 @@
+@import '../styles/index.scss';
+
+.header {
+  background-color: $dark-blue-1;
+  color: $white;
+  font-family: $font-primary;
+  height: 80px;
+
+  &__content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 40px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__theme-switcher {
+    align-items: center;
+    display: flex;
+  }
+
+  &__theme-switcher-text {
+    font-weight: $font-weight-semi-bold;
+    margin-left: 5px;
+  }
+}

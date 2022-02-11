@@ -2,13 +2,17 @@
 
 .homepage {
   background-color: $dark-blue-2;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 
   &__content {
     margin: auto;
     max-width: 1440px;
     padding: 0 40px;
+  }
+
+  &__search-and-filter {
+    padding-top: 40px;
   }
 
   &__cards {

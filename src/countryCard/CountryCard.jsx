@@ -14,7 +14,7 @@ const CountryCard = props => {
               className="card__country-data
             "
             >
-              {props.countryPopulation}
+              {props.countryPopulation.toLocaleString('en')}
             </span>
           </span>
           <span className="card__country-info">

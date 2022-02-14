@@ -1,32 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../filterDropdown/filterDropdown.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import useFilterDropdown from './useFilterDropdown';
 
 const FilterDropdown = props => {
+  const { showItems, handleDropdown, filterRegion } = useFilterDropdown();
   const dropdownItems = props.items;
-  const [showItems, setShowItems] = useState(false);
-
-  const handleDropdown = () => {
-    setShowItems(!showItems);
-  };
 
   return (
     <div className="filter">
       <button className="filter__dropdown-btn" onClick={handleDropdown}>
         <span>Filter by Region</span>
-        <FontAwesomeIcon icon={faAngleDown} />
+        <FontAwesomeIcon icon={showItems ? faAngleUp : faAngleDown} />
       </button>
-      <div
-        style={{ display: showItems ? 'block' : 'none' }}
-        className="filter__dropdown-box"
-      >
-        {dropdownItems.map(item => (
-          <div className="filter__dropdown-option" key={item.id}>
-            {item.value}
-          </div>
-        ))}
-      </div>
+      {showItems && (
+        <div className="filter__dropdown-box">
+          {dropdownItems.map(item => (
+            <div
+              className="filter__dropdown-option"
+              key={item.id}
+              onClick={e => {
+                filterRegion(e, props.initialCountries, props.setCountries);
+              }}
+            >
+              {item.value}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

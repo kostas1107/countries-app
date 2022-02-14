@@ -6,12 +6,15 @@ import FilterDropdown from '../filterDropdown/FilterDropdown';
 
 const HomepageLayout = () => {
   const [countries, setCountries] = useState([]);
+  const [initialCountries, setInitialCountries] = useState([]);
 
   useEffect(() => {
     getCountries().then(data => setCountries(data));
   }, []);
 
-  console.log(countries);
+  useEffect(() => {
+    getCountries().then(data => setInitialCountries(data));
+  }, []);
 
   return (
     <div className="homepage">
@@ -19,12 +22,15 @@ const HomepageLayout = () => {
         <section className="homepage__search-and-filter">
           <FilterDropdown
             items={[
-              { value: 'Africa', id: 1 },
-              { value: 'America', id: 2 },
-              { value: 'Asia', id: 3 },
-              { value: 'Europe', id: 4 },
-              { value: 'Oceania', id: 5 }
+              { value: 'All', id: 1 },
+              { value: 'Africa', id: 2 },
+              { value: 'Americas', id: 3 },
+              { value: 'Asia', id: 4 },
+              { value: 'Europe', id: 5 },
+              { value: 'Oceania', id: 6 }
             ]}
+            initialCountries={initialCountries}
+            setCountries={setCountries}
           />
         </section>
         <section className="homepage__cards">

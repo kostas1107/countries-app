@@ -9,6 +9,7 @@
     color: $white;
     cursor: pointer;
     display: flex;
+    font-size: $font-size-small;
     font-weight: $font-weight-semi-bold;
     height: 50px;
     justify-content: space-between;
@@ -23,6 +24,7 @@
     box-sizing: border-box;
     color: $white;
     font-size: $font-size-small;
+    font-weight: $font-weight-semi-bold;
     margin-top: 5px;
     padding: 7px 15px;
     position: absolute;

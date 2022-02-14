@@ -1,1 +1,6 @@
 @import '../styles/base/variables';
+
+* {
+  box-sizing: border-box;
+  font-family: $font-primary;
+}

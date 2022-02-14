@@ -3,6 +3,7 @@ import '../homepageLayout/homepageLayout.scss';
 import getCountries from '../api/getCountries';
 import CountryCard from '../countryCard/CountryCard';
 import FilterDropdown from '../filterDropdown/FilterDropdown';
+import SearchBar from '../searchBar/SearchBar';
 
 const HomepageLayout = () => {
   const [countries, setCountries] = useState([]);
@@ -20,6 +21,7 @@ const HomepageLayout = () => {
     <div className="homepage">
       <div className="homepage__content">
         <section className="homepage__search-and-filter">
+          <SearchBar />
           <FilterDropdown
             items={[
               { value: 'All', id: 1 },

@@ -5,7 +5,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import useSearchBar from './useSearchBar';
 
 const SearchBar = props => {
-  const { handleChange, searchedText, searchedTextMatches } = useSearchBar();
+  const { handleChange, searchedText, searchedTextMatches, handleSearch } =
+    useSearchBar();
   return (
     <div className="search-bar">
       <FontAwesomeIcon
@@ -22,7 +23,11 @@ const SearchBar = props => {
       />
       <div className="search-bar__matches-box">
         {searchedTextMatches.map(match => (
-          <div key={match.name.common} className="search-bar__match">
+          <div
+            key={match.name.common}
+            className="search-bar__match"
+            onClick={e => handleSearch(e, props.data, props.updateData)}
+          >
             {match.name.common}
           </div>
         ))}

@@ -41,7 +41,6 @@
     margin-top: 5px;
     max-height: 150px;
     overflow-y: scroll;
-    padding: 0 60px;
     position: absolute;
     scrollbar-width: none;
 
@@ -53,6 +52,7 @@
   &__match {
     cursor: pointer;
     margin: 7px 0;
+    padding: 0 60px;
     transition: all 0.3s ease;
 
     &:hover {

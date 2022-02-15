@@ -19,7 +19,17 @@ const useSearchBar = () => {
     }
   };
 
-  return { handleChange, searchedText, searchedTextMatches };
+  const handleSearch = (event, data, updateData) => {
+    const selectedMatch = event.target.textContent;
+    setSearchedText(selectedMatch);
+    setSearchedTextMatches([]);
+    const filteredByWord = data.filter(value => {
+      return value.name.common === selectedMatch;
+    });
+    updateData(filteredByWord);
+  };
+
+  return { handleChange, searchedText, searchedTextMatches, handleSearch };
 };
 
 export default useSearchBar;

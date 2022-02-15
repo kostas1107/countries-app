@@ -21,7 +21,7 @@ const HomepageLayout = () => {
     <div className="homepage">
       <div className="homepage__content">
         <section className="homepage__search-and-filter">
-          <SearchBar data={countries} />
+          <SearchBar data={initialCountries} updateData={setCountries} />
           <FilterDropdown
             items={[
               { value: 'All', id: 1 },

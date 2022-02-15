@@ -8,6 +8,7 @@ import SearchBar from '../searchBar/SearchBar';
 const HomepageLayout = () => {
   const [countries, setCountries] = useState([]);
   const [initialCountries, setInitialCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
 
   useEffect(() => {
     getCountries().then(data => setCountries(data));
@@ -21,7 +22,14 @@ const HomepageLayout = () => {
     <div className="homepage">
       <div className="homepage__content">
         <section className="homepage__search-and-filter">
-          <SearchBar data={initialCountries} updateData={setCountries} />
+          <SearchBar
+            data={
+              filteredCountries.length > 0
+                ? filteredCountries
+                : initialCountries
+            }
+            updateData={setCountries}
+          />
           <FilterDropdown
             items={[
               { value: 'All', id: 1 },
@@ -33,6 +41,7 @@ const HomepageLayout = () => {
             ]}
             initialCountries={initialCountries}
             setCountries={setCountries}
+            setFilteredCountries={setFilteredCountries}
           />
         </section>
         <section className="homepage__cards">

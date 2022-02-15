@@ -4,7 +4,7 @@ const useSearchBar = () => {
   const [searchedText, setSearchedText] = useState('');
   const [searchedTextMatches, setSearchedTextMatches] = useState([]);
 
-  const handleChange = (event, data) => {
+  const handleChange = (event, data, updateData) => {
     const searchInputText = event.target.value;
     setSearchedText(searchInputText);
     const sortedData = data.filter(value => {
@@ -14,6 +14,7 @@ const useSearchBar = () => {
     });
     if (searchInputText === '') {
       setSearchedTextMatches([]);
+      updateData(data);
     } else {
       setSearchedTextMatches(sortedData);
     }
@@ -29,7 +30,20 @@ const useSearchBar = () => {
     updateData(filteredByWord);
   };
 
-  return { handleChange, searchedText, searchedTextMatches, handleSearch };
+  const handleClear = (data, updateData) => {
+    setSearchedText('');
+    setSearchedTextMatches([]);
+    updateData(data);
+  };
+
+  return {
+    handleChange,
+    searchedText,
+    searchedTextMatches,
+    handleSearch,
+    handleClear,
+    setSearchedText
+  };
 };
 
 export default useSearchBar;

@@ -5,13 +5,14 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import useFilterDropdown from './useFilterDropdown';
 
 const FilterDropdown = props => {
-  const { showItems, handleDropdown, filterRegion } = useFilterDropdown();
+  const { showItems, handleDropdown, filterRegion, region } =
+    useFilterDropdown();
   const dropdownItems = props.items;
 
   return (
     <div className="filter">
       <button className="filter__dropdown-btn" onClick={handleDropdown}>
-        <span>Filter by Region</span>
+        <span>Filter by Region: {region}</span>
         <FontAwesomeIcon icon={showItems ? faAngleUp : faAngleDown} />
       </button>
       {showItems && (
@@ -21,7 +22,12 @@ const FilterDropdown = props => {
               className="filter__dropdown-option"
               key={item.id}
               onClick={e => {
-                filterRegion(e, props.initialCountries, props.setCountries);
+                filterRegion(
+                  e,
+                  props.initialCountries,
+                  props.setCountries,
+                  props.setFilteredCountries
+                );
               }}
             >
               {item.value}

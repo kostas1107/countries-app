@@ -4,9 +4,9 @@
   background-color: $dark-blue-1;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 375px;
-  margin-bottom: 100px;
-  width: 300px;
+  min-width: 230px;
 
   &__country-flag {
     border-top-left-radius: 5px;

@@ -48,7 +48,7 @@ const HomepageLayout = () => {
           {countries.map(country => (
             <CountryCard
               key={country.name.common}
-              countryFlag={country.flags.png}
+              countryFlag={country.flags.svg}
               countryName={country.name.common}
               countryPopulation={country.population}
               countryRegion={country.region}

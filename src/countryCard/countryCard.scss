@@ -2,11 +2,22 @@
 
 .card {
   background-color: $dark-blue-1;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 375px;
-  min-width: 230px;
+  width: calc(25% - 53px);
+
+  @media (max-width: $xl) {
+    width: calc(33% - 44px);
+  }
+
+  @media (max-width: $l) {
+    width: calc(50% - 35px);
+  }
+
+  @media (max-width: $s) {
+    width: 100%;
+  }
 
   &__country-flag {
     border-top-left-radius: 5px;

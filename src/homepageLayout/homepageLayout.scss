@@ -20,12 +20,9 @@
   }
 
   &__cards {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
     padding-top: 40px;
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }

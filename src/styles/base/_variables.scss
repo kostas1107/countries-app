@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 // breakpoints
-$breakpoint-small: 375px;
-$breakpoint-large: 1440px;
+$xs: 375px;
+$s: 576px;
+$m: 768px;
+$l: 992px;
+$xl: 1200px;
+$xxl: 1440px;
 
 // colors
 $white: hsl(0, 0%, 100%);

@@ -1,43 +1,53 @@
 import React from 'react';
 import '../countryCard/countryCard.scss';
+import { Link } from 'react-router-dom';
 
 const CountryCard = props => {
   return (
-    <article className="card">
-      <img className="card__country-flag" alt="flag" src={props.countryFlag} />
-      <div className="card__country-details">
-        <h3 className="card__country-name">{props.countryName}</h3>
-        <div className="card__country-description">
-          <span className="card__country-info">
-            Population:{' '}
-            <span
-              className="card__country-data
+    <Link
+      className="card-link"
+      to={`/${props.countryShortName.toLowerCase()}`}
+    >
+      <article className="card">
+        <img
+          className="card__country-flag"
+          alt="flag"
+          src={props.countryFlag}
+        />
+        <div className="card__country-details">
+          <h3 className="card__country-name">{props.countryName}</h3>
+          <div className="card__country-description">
+            <span className="card__country-info">
+              Population:{' '}
+              <span
+                className="card__country-data
             "
-            >
-              {props.countryPopulation.toLocaleString('en')}
+              >
+                {props.countryPopulation.toLocaleString('en')}
+              </span>
             </span>
-          </span>
-          <span className="card__country-info">
-            Region:{' '}
-            <span
-              className="card__country-data
+            <span className="card__country-info">
+              Region:{' '}
+              <span
+                className="card__country-data
             "
-            >
-              {props.countryRegion}
+              >
+                {props.countryRegion}
+              </span>
             </span>
-          </span>
-          <span className="card__country-info">
-            Capital:{' '}
-            <span
-              className="card__country-data
+            <span className="card__country-info">
+              Capital:{' '}
+              <span
+                className="card__country-data
             "
-            >
-              {props.countryCapital}
+              >
+                {props.countryCapital}
+              </span>
             </span>
-          </span>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 };
 

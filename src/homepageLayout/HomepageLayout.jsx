@@ -53,6 +53,7 @@ const HomepageLayout = () => {
               countryPopulation={country.population}
               countryRegion={country.region}
               countryCapital={country.capital}
+              countryShortName={country.cca3}
             />
           ))}
         </section>

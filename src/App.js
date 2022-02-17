@@ -1,12 +1,13 @@
 import './header/Header';
-import Header from './header/Header';
-import HomepageLayout from './homepageLayout/HomepageLayout';
+import HomePage from './pages/HomePage/HomePage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <HomepageLayout />
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+      </Routes>
     </div>
   );
 }

@@ -54,6 +54,7 @@
     overflow-y: scroll;
     position: absolute;
     scrollbar-width: none;
+    z-index: 1;
 
     &::-webkit-scrollbar {
       display: none;

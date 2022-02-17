@@ -6,7 +6,8 @@ const CountryCard = props => {
   return (
     <Link
       className="card-link"
-      to={`/${props.countryShortName.toLowerCase()}`}
+      // to={`/${props.countryShortName.toLowerCase()}`}
+      to="/country"
     >
       <article className="card">
         <img

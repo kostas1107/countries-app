@@ -1,0 +1,94 @@
+@import '../styles/index.scss';
+
+.country-details {
+  background-color: $dark-blue-2;
+  height: calc(100vh - 80px);
+  width: 100%;
+
+  &__container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 80px 40px 0;
+  }
+
+  &__back-button {
+    background-color: $dark-blue-1;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    color: $white;
+    display: inline-block;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semi-bold;
+    padding: 7px 35px;
+    text-decoration: none;
+  }
+
+  &__arrow-icon {
+    margin-right: 10px;
+  }
+
+  &__country-wrapper {
+    align-items: center;
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+
+  &__country-flag {
+    background-color: $white;
+    height: 400px;
+    width: 50%;
+  }
+
+  &__country-info {
+    color: $white;
+    width: 50%;
+  }
+
+  &__country-name {
+    font-size: $font-size-large;
+    margin: 0 0 40px;
+  }
+
+  &__country-description {
+    display: flex;
+    justify-content: space-between;
+
+    &--left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__country-detail {
+    font-weight: $font-weight-semi-bold;
+    margin-bottom: 5px;
+
+    &--border {
+      margin-right: 10px;
+    }
+  }
+
+  &__border-countries-wrapper {
+    margin-top: 80px;
+  }
+
+  &__border-country-link {
+    color: $white;
+    cursor: pointer;
+    background-color: $dark-blue-1;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px 15px;
+    text-decoration: none;
+  }
+}

@@ -18,6 +18,13 @@ const CountryDetails = () => {
     country => country.cca3.toLowerCase() === countryShortName
   );
 
+  const handleBorderCountryName = borderCountry => {
+    const countryFullName = countries.find(
+      country => country.cca3 === borderCountry
+    );
+    return countryFullName?.name?.common;
+  };
+
   const countryFlag = country?.flags?.svg;
   const countryName = country?.name?.common;
   const countryNativeName =
@@ -40,7 +47,6 @@ const CountryDetails = () => {
   const countryBorderCountries = country?.borders;
 
   console.log(country);
-  console.log(countryCurrencies);
   return (
     <div className="country-details">
       <section className="country-details__container">
@@ -115,21 +121,23 @@ const CountryDetails = () => {
                 </span>
               </div>
             </div>
-            <div className="country-details__border-countries-wrapper">
+            <div className="country-details__border-countries">
               <span className="country-details__country-detail country-details__country-detail--border">
                 Border Countries:{' '}
               </span>
-              {countryBorderCountries
-                ? countryBorderCountries.map(borderCountry => (
-                    <Link
-                      className="country-details__border-country-link"
-                      to={`/country-${borderCountry.toLowerCase()}`}
-                      key={borderCountry.toLowerCase()}
-                    >
-                      {borderCountry}
-                    </Link>
-                  ))
-                : ''}
+              <div className="country-details__border-countries-wrapper">
+                {countryBorderCountries
+                  ? countryBorderCountries.map(borderCountry => (
+                      <Link
+                        className="country-details__border-country-link"
+                        to={`/country-${borderCountry.toLowerCase()}`}
+                        key={borderCountry.toLowerCase()}
+                      >
+                        {handleBorderCountryName(borderCountry)}
+                      </Link>
+                    ))
+                  : ''}
+              </div>
             </div>
           </div>
         </article>

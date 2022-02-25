@@ -37,8 +37,7 @@
     margin-top: 80px;
   }
 
-  &__country-flag {
-    background-color: $white;
+  &__country-flag { 
     height: 400px;
     width: 50%;
   }
@@ -81,7 +80,9 @@
     margin-bottom: 5px;
 
     &--border {
-      margin-right: 10px;
+      display: inline-block;
+      margin-bottom: 0;
+      min-width: 23%;
     }
   }
 
@@ -89,8 +90,15 @@
     font-weight: $font-weight-light;
   }
 
+  &__border-countries {
+    display: flex;
+    margin-top: 50px;
+  }
+
   &__border-countries-wrapper {
-    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   &__border-country-link {
@@ -99,7 +107,6 @@
     background-color: $dark-blue-1;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-right: 10px;
     padding: 5px 15px;
     text-decoration: none;
   }

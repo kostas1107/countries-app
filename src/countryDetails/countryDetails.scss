@@ -2,7 +2,7 @@
 
 .country-details {
   background-color: $dark-blue-2;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   width: 100%;
 
   &__container {
@@ -32,14 +32,18 @@
   &__country-wrapper {
     align-items: center;
     display: flex;
-    gap: 100px;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 80px;
   }
 
-  &__country-flag { 
-    height: 400px;
+  &__country-flag {
+    height: 450px;
     width: 50%;
+
+    @media (max-width: $l) {
+      width: 100%;
+    }
   }
 
   &__country-flag-img {
@@ -51,27 +55,50 @@
 
   &__country-info {
     color: $white;
-    width: 50%;
+    width: 45%;
+
+    @media (max-width: $l) {
+      margin-top: 50px;
+      width: 100%;
+    }
   }
 
   &__country-name {
     font-size: $font-size-large;
     margin: 0 0 40px;
+
+    @media (max-width: $l) {
+      text-align: center;
+    }
   }
 
   &__country-description {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: $l) {
+      justify-content: center;
+    }
 
     &--left {
       display: flex;
       flex-direction: column;
+      margin-right: 10px;
+
+      @media (max-width: $l) {
+        align-items: flex-start;
+      }
     }
 
     &--right {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+
+      @media (max-width: $l) {
+        align-items: center;
+      }
     }
   }
 
@@ -83,6 +110,10 @@
       display: inline-block;
       margin-bottom: 0;
       min-width: 23%;
+
+      @media (max-width: $l) {
+        min-width: 16%;
+      }
     }
   }
 
@@ -93,20 +124,25 @@
   &__border-countries {
     display: flex;
     margin-top: 50px;
+
+    @media (max-width: $l) {
+      justify-content: center;
+    }
   }
 
   &__border-countries-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 7px;
+    margin-left: 7px;
   }
 
   &__border-country-link {
-    color: $white;
-    cursor: pointer;
     background-color: $dark-blue-1;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: $white;
+    cursor: pointer;
     padding: 5px 15px;
     text-decoration: none;
   }

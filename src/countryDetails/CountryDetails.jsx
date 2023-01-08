@@ -46,7 +46,6 @@ const CountryDetails = () => {
     : '';
   const countryBorderCountries = country?.borders;
 
-  console.log(country);
   return (
     <div className="country-details">
       <section className="country-details__container">
